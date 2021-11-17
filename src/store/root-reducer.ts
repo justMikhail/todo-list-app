@@ -1,5 +1,4 @@
-import {combineReducers} from '@reduxjs/toolkit';
-
+import {combineReducers} from 'redux';
 import {appData} from './app-data/app-data';
 
 export enum NameSpace {

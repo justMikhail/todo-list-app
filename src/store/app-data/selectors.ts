@@ -1,6 +1,6 @@
 import {NameSpace} from '../root-reducer';
-import {StateType} from '../../types/state-type';
+import {State} from '../../types/state';
 import {TodoType} from '../../types/todo-type';
 
-export const getTodosData = (state: StateType): TodoType[] => state[NameSpace.data].allTodosData;
-export const getLoadedDataStatus = (state: StateType): boolean => state[NameSpace.data].isDataLoaded;
+export const getAllTodosData = (state: State): TodoType[] => state[NameSpace.data].allTodosData;
+export const getLoadedDataStatus = (state: State): boolean => state[NameSpace.data].isDataLoaded;

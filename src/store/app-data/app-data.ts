@@ -1,9 +1,8 @@
 import {createReducer} from '@reduxjs/toolkit';
-
+import {AppData} from '../../types/state';
 import {loadAllTodosData} from '../action';
-import {AppDataType} from '../../types/state-type';
 
-const initialState: AppDataType = {
+const initialState: AppData = {
   allTodosData: [],
   isDataLoaded: false,
 };
@@ -11,8 +10,9 @@ const initialState: AppDataType = {
 const appData = createReducer(initialState, (builder) => {
   builder
     .addCase(loadAllTodosData, (state, action) => {
+      const {allTodosData} = action.payload;
 
-      state.allTodosData = action.payload;
+      state.allTodosData = allTodosData;
       state.isDataLoaded = true;
     });
 });

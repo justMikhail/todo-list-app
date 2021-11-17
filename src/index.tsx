@@ -4,14 +4,14 @@ import {Provider} from 'react-redux';
 import {configureStore} from '@reduxjs/toolkit';
 
 import {rootReducer} from './store/root-reducer';
-import {createApi} from './services/api';
-import {fetchTodosDataAction} from './store/api-action';
+import {createAPI} from './services/api';
+import {fetchTodosDataAction} from './store/api-actions';
 
 import App from './App';
 
 import './styles/styles.scss';
 
-const api = createApi();
+const api = createAPI();
 
 const store = configureStore({
   reducer: rootReducer,
@@ -23,7 +23,7 @@ const store = configureStore({
     }),
 });
 
-store.dispatch(fetchTodosDataAction);
+store.dispatch(fetchTodosDataAction());
 
 ReactDOM.render(
   <React.StrictMode>

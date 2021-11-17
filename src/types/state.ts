@@ -1,9 +1,9 @@
 import {RootState} from '../store/root-reducer';
 import {TodoType} from './todo-type';
 
-export type AppDataType = {
+export type AppData = {
   allTodosData: TodoType[],
   isDataLoaded: boolean,
-}
+};
 
-export type StateType = RootState;
+export type State = RootState;

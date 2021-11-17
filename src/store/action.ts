@@ -1,11 +1,13 @@
 import {createAction} from '@reduxjs/toolkit';
-
-import {ActionType} from '../types/action-type';
+import {ActionType} from '../types/action';
 import {TodoType} from '../types/todo-type';
 
 export const loadAllTodosData = createAction(
-  ActionType.LoadTodosData,
-  (todosData: TodoType[]) => ({
-    payload: todosData,
+  ActionType.LoadAllTodosData,
+  (allTodosData: TodoType[]) => ({
+    payload: {
+      allTodosData,
+    },
   }),
 );
+
