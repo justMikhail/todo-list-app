@@ -1,8 +1,9 @@
-import React from 'react';
 
-function App() {
+function App(): JSX.Element {
   return (
-    <div className="App"></div>
+    <div className="App">
+      Simple
+    </div>
   );
 }
 
