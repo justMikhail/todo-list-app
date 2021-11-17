@@ -7,7 +7,7 @@ import {rootReducer} from './store/root-reducer';
 import {createAPI} from './services/api';
 import {fetchTodosDataAction} from './store/api-actions';
 
-import App from './App';
+import App from './components/app/App';
 
 import './styles/styles.scss';
 

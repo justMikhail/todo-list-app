@@ -1,6 +1,6 @@
 import {ThunkActionResult} from '../types/action';
 import {loadAllTodosData} from './action';
-import {APIRoute} from '../const';
+import {APIRoute} from '../const/routs';
 import {TodoType} from '../types/todo-type';
 
 export const fetchTodosDataAction = (): ThunkActionResult =>
