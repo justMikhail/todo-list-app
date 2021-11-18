@@ -1,7 +1,11 @@
+import './loader.scss';
+
 function Loader(): JSX.Element {
 
   return (
-    <div>Loading...</div>
+    <div className="loader-wrapper">
+      <div className="loader"></div>
+    </div>
   );
 }
 
