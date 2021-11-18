@@ -5,13 +5,17 @@ import './main-page.scss';
 function MainPage(): JSX.Element {
 
   return (
-    <>
-      <main className="main">
-        MainPage
-        <TodoBoard />
-      </main>
-      <Footer />
-    </>
+    <div className="page page--main">
+      <div className="page__main">
+        <main className="main">
+          MainPage
+          <TodoBoard />
+        </main>
+      </div>
+      <div className="page__footer">
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -1,5 +1,10 @@
-//Colors
+// breakpoint
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1280px;
+$max-desktop-width: 1440px;
 
+//Colors
 $white: #ffffff;
 $black: #000000;
 
@@ -11,5 +16,7 @@ $primary-color-500-20: rgba(255, 132, 105, 0.2);
 $secondary-color-900: #010920;
 $secondary-color-500: #252E42;
 $secondary-color-400: #31394D;
+$secondary-color-200: #4F5565;
+
 
 

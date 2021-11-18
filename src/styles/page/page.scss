@@ -1,0 +1,18 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+
+  &--main {
+    color: $white;
+    background-color: $secondary-color-900;
+  }
+}
+
+.page__main {
+  background-color: inherit;
+}
+
+.page__footer {
+  background-color: inherit;
+}
