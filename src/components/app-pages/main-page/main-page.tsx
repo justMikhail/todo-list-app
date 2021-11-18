@@ -6,14 +6,16 @@ function MainPage(): JSX.Element {
 
   return (
     <div className="page page--main">
-      <div className="page__main">
-        <main className="main">
+      <main className="page__main">
+        <div className="page__container">
           MainPage
           <TodoBoard />
-        </main>
-      </div>
+        </div>
+      </main>
       <div className="page__footer">
-        <Footer />
+        <div className="page__container">
+          <Footer />
+        </div>
       </div>
     </div>
   );

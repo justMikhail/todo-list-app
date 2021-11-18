@@ -16,3 +16,19 @@
 .page__footer {
   background-color: inherit;
 }
+
+.page__container {
+  margin: 0 auto;
+  width: 100%;
+  min-width: $mobile-width;
+  padding: 0 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: $max-desktop-width;
+    padding: 0 100px;
+  }
+}
