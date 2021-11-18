@@ -1,2 +1,11 @@
+// Normalize
 @import '~normalize.css';
 
+// Fonts
+@import "./fonts/fonts.scss";
+
+// Variables
+@import "./utils/variables.scss";
+
+// Common
+@import "./utils/common.scss";
