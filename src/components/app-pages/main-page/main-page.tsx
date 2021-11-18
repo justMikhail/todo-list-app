@@ -8,15 +8,14 @@ function MainPage(): JSX.Element {
     <div className="page page--main">
       <main className="page__main">
         <div className="page__container">
-          MainPage
           <TodoBoard />
         </div>
       </main>
-      <div className="page__footer">
+      <footer className="page__footer">
         <div className="page__container">
           <Footer />
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

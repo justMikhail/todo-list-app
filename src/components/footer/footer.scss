@@ -1,0 +1,17 @@
+@import  '../../styles/utils/variables';
+
+.footer {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 35vh;
+}
+
+.footer__copyright {
+}
+
+.footer__copyright h2 {
+  font-size: 16px;
+  line-height: 19.5px;
+  color: $secondary-color-500;
+}

@@ -11,6 +11,9 @@
 
 .page__main {
   background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .page__footer {
