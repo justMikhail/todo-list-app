@@ -1,10 +1,11 @@
 
 type TodoItemType = {
   title: string;
+  description: string
 }
 
 function TodoItem(props: TodoItemType): JSX.Element {
-  const {title} = props;
+  const {title, description} = props;
 
   return (
     <li className="todo-item">
@@ -13,7 +14,7 @@ function TodoItem(props: TodoItemType): JSX.Element {
         <span className="check__box"/>
         {title}
         <p className="todo-item__description">
-          Lorem ipsum dolor sit amet.
+          {description}
         </p>
       </label>
     </li>
