@@ -11,3 +11,9 @@ export const loadAllTodosData = createAction(
   }),
 );
 
+export const changeTodoCompleteStatus = createAction(
+  ActionType.ChangeTodoCompleteStatus,
+  (changedTodoId) => ({
+    payload: changedTodoId,
+  }),
+);
