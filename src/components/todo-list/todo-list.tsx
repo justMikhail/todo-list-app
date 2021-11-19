@@ -1,6 +1,7 @@
 import TodoItem from '../todo-item/todo-item';
 import {TodoType} from '../../types/todo-type';
-import {getDescriptionWithProbability} from '../../utils/utils';
+
+import {useState} from 'react';
 
 import './todo-list.scss';
 
@@ -10,7 +11,19 @@ type TodoListType = {
 
 function TodoList(props: TodoListType): JSX.Element {
   const {allTodos} = props;
-  const todosForShowing = [...allTodos].slice(0, 7); //todo replace with pagination or scroll
+  const [todos, setTodos] = useState(allTodos);
+  const todosForShowing = todos.slice(0, 5); //todo replace with pagination or scroll
+
+  const handleTodoItemClick = (currentTodoItemId: number) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === currentTodoItemId) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    );
+  };
 
   if (!allTodos.length) {
     return <p>Please, Add your firs task</p>;
@@ -18,18 +31,13 @@ function TodoList(props: TodoListType): JSX.Element {
 
   return (
     <ul className="todo-list">
-      {todosForShowing.map((todo) => {
-        const description = getDescriptionWithProbability(todo.title);
-
-        return (
-          <TodoItem
-            key={todo.id}
-            title={todo.title}
-            description={description}
-          />
-        );
-      },
-      )}
+      {todosForShowing.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todoData={todo}
+          onTodoItemClickHandler={handleTodoItemClick}
+        />
+      ))}
     </ul>
   );
 }

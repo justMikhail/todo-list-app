@@ -1,0 +1,77 @@
+@import  '../../styles/utils/variables';
+
+.todo-item {
+
+}
+
+.todo-item__check {
+  padding-left: 2.2em;
+  cursor: pointer;
+  display: block;
+}
+
+.todo-item__check-input {
+  position: absolute;
+  appearance: none;
+
+  &:hover + .todo-item__check-box {
+    background-color: $primary-color-500-20;
+  }
+
+  &:hover ~ .todo-item__text {
+    color: $primary-color-500;
+  }
+
+  &:focus + .todo-item__check-box {
+    background-color: $primary-color-500-20;
+  }
+
+  &:focus ~ .todo-item__text {
+    color: $primary-color-500;
+  }
+
+  &:hover ~ .todo-item__text {
+  }
+
+  &:active + .todo-item__check-box {
+  }
+
+  &:checked + .todo-item__check-box {
+    background-color: $primary-color-500;
+  }
+
+  &:checked ~ .todo-item__text {
+    text-decoration: line-through;
+    color: $secondary-color-200;
+  }
+
+  &:checked:hover ~ .todo-item__text {
+    color: $white;
+  }
+
+  &:disabled + .todo-item__check-box {
+  }
+
+  &:checked:disabled + .todo-item__check-box {
+  }
+}
+
+.todo-item__check-box {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: -2.2em;
+  background-color: $secondary-color-200;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.todo-item__text {
+  transition: all 0.2s ease;
+}
+
+.todo-item__description {
+  color: $secondary-color-200;
+  font-size: 12px;
+  line-height: 15px;
+}

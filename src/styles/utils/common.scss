@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
 html,
 body {
   height: 100%;

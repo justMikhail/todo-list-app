@@ -20,10 +20,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .todo-board__title {
   margin: 0;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 .todo-board__add-button {
@@ -31,13 +34,26 @@
   border-radius: 0.7em;
   text-transform: uppercase;
   background-color: $primary-color-500;
+  transition: all 0.2s ease;
 
   border: none;
   font: inherit;
   color: inherit;
   cursor: pointer;
 
+  font-size: 14px;
+  line-height: 17px;
+
   &:focus {
     outline: none;
+    background-color: $primary-color-700;
+  }
+
+  &:hover {
+    background-color: $primary-color-700;
+  }
+
+  &:active {
+    background-color: $primary-color-500-20;
   }
 }
