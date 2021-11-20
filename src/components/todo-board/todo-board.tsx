@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux';
 import {Transition} from 'react-transition-group';
-import {getAllTodosData, getLoadedDataStatus} from '../../store/app-data/selectors';
+import {selectAllTodosData, selectLoadedDataStatus} from '../../store/app-data/selectors';
 import Loader from '../loader/loader';
 import TodoList from '../todo-list/todo-list';
 import {fetchTodosDataAction} from '../../store/api-actions';
@@ -9,8 +9,8 @@ import {useDispatch} from 'react-redux';
 import {useEffect, useRef} from 'react';
 
 function TodoBoard(): JSX.Element {
-  const allTodosData = useSelector(getAllTodosData);
-  const isDataLoaded = useSelector(getLoadedDataStatus);
+  const allTodosData = useSelector(selectAllTodosData);
+  const isDataLoaded = useSelector(selectLoadedDataStatus);
   const decorFirstRef = useRef(null);
   const decorSecondRef = useRef(null);
 

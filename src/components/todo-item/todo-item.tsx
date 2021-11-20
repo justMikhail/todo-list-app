@@ -1,6 +1,4 @@
 import {useDispatch} from 'react-redux';
-
-import {getDescriptionWithProbability} from '../../utils/utils';
 import {changeTodoCompleteStatus} from '../../store/action';
 import {TodoType} from '../../types/todo-type';
 import './todo-item.scss';
@@ -11,7 +9,6 @@ type TodoItemType = {
 
 function TodoItem(props: TodoItemType): JSX.Element {
   const {todoData} = props;
-  const description = getDescriptionWithProbability(todoData.title);
   const isCompleted = todoData.completed;
   const dispatch  = useDispatch();
   const onTodoItemClickHandler: React.ChangeEventHandler<HTMLInputElement>  = (event) => dispatch(changeTodoCompleteStatus(parseInt(event.target.dataset.id ?? '', 10)));
@@ -29,9 +26,11 @@ function TodoItem(props: TodoItemType): JSX.Element {
         />
         <span className="todo-item__check-box"/>
         <p className="todo-item__text">{todoData.title}</p>
-        <p className="todo-item__description">
-          {description}
-        </p>
+        {todoData.description && (
+          <p className="todo-item__description">
+            {todoData.description}
+          </p>
+        )}
       </label>
     </li>
   );

@@ -5,7 +5,11 @@ export const getRandomInteger = (min = 0, max = 1): number => {
   return Math.floor(result);
 };
 
-export const getDescriptionWithProbability = (descriptionText: string):string => {
-  const haveDescription = getRandomInteger(0, 3) === 0;
-  return haveDescription ? descriptionText : '';
+/**
+ * @param value anyType
+ * @param probability number from 0 to 1 (example 0.25 = 25%)
+ */
+export const returnValueWithProbability = <ValueType>(value: ValueType, probability: number):ValueType | null => {
+  const haveValue = getRandomInteger(0, 1/probability - 1) === 0;
+  return haveValue ? value : null;
 };
