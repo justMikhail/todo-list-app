@@ -3,11 +3,21 @@ import {Transition} from 'react-transition-group';
 import {getAllTodosData, getLoadedDataStatus} from '../../store/app-data/selectors';
 import Loader from '../loader/loader';
 import TodoList from '../todo-list/todo-list';
+import {fetchTodosDataAction} from '../../store/api-actions';
 import './todo-board.scss';
+import {useDispatch} from 'react-redux';
+import {useEffect, useRef} from 'react';
 
 function TodoBoard(): JSX.Element {
   const allTodosData = useSelector(getAllTodosData);
   const isDataLoaded = useSelector(getLoadedDataStatus);
+  const decorFirstRef = useRef(null);
+  const decorSecondRef = useRef(null);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchTodosDataAction());
+  }, [dispatch]);
 
   return (
     <article className="todo-board">
@@ -20,11 +30,11 @@ function TodoBoard(): JSX.Element {
           ? <TodoList allTodos={allTodosData} />
           : <Loader />}
       </div>
-      <Transition in={isDataLoaded} timeout={500}>
-        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--first ${state}`}></div>}
+      <Transition nodeRef={decorFirstRef} in={isDataLoaded} timeout={500}>
+        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--first ${state}`} ref={decorFirstRef} />}
       </Transition>
-      <Transition in={isDataLoaded} timeout={500}>
-        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--second ${state}`}></div>}
+      <Transition nodeRef={decorSecondRef} in={isDataLoaded} timeout={500}>
+        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--second ${state}`} ref={decorSecondRef} />}
       </Transition>
     </article>
   );

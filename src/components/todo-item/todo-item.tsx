@@ -14,7 +14,7 @@ function TodoItem(props: TodoItemType): JSX.Element {
   const description = getDescriptionWithProbability(todoData.title);
   const isCompleted = todoData.completed;
   const dispatch  = useDispatch();
-  const onTodoItemClickHandler = (id: number) => dispatch(changeTodoCompleteStatus(id));
+  const onTodoItemClickHandler: React.ChangeEventHandler<HTMLInputElement>  = (event) => dispatch(changeTodoCompleteStatus(parseInt(event.target.dataset.id ?? '', 10)));
 
   return (
     <li className="todo-item">
@@ -24,7 +24,8 @@ function TodoItem(props: TodoItemType): JSX.Element {
           type="checkbox"
           checked={isCompleted}
           disabled={false}
-          onChange={() => onTodoItemClickHandler(todoData.id)}
+          data-id={todoData.id}
+          onChange={onTodoItemClickHandler}
         />
         <span className="todo-item__check-box"/>
         <p className="todo-item__text">{todoData.title}</p>
