@@ -10,13 +10,18 @@ function TodoBoard(): JSX.Element {
 
   return (
     <article className="todo-board">
-      <div className="todo-board__header">
-        <h1 className="todo-board__title">Todo list</h1>
-        <button className="todo-board__add-button">Add</button>
+      <div className="todo-board__inner">
+        <div className="todo-board__header">
+          <h1 className="todo-board__title">Todo list</h1>
+          <button className="todo-board__add-button">Add</button>
+        </div>
+        {isDataLoaded
+          ? <TodoList allTodos={allTodosData} />
+          : <Loader />}
       </div>
-      {isDataLoaded
-        ? <TodoList allTodos={allTodosData} />
-        : <Loader />}
+
+      <div className="todo-bard__decor-bgr todo-bard__decor-bgr--first"></div>
+      <div className="todo-bard__decor-bgr todo-bard__decor-bgr--second"></div>
     </article>
   );
 }

@@ -23,6 +23,7 @@ function TodoItem(props: TodoItemType): JSX.Element {
           className="todo-item__check-input"
           type="checkbox"
           checked={isCompleted}
+          disabled={false}
           onChange={() => onTodoItemClickHandler(todoData.id)}
         />
         <span className="todo-item__check-box"/>

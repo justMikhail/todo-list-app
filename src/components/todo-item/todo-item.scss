@@ -39,7 +39,7 @@
 
   &:checked + .todo-item__check-box {
     background-color: $primary-color-500;
-    background-image: url("../../img/checkbox/check-mark.svg");
+    background-image: url("../../../src/img/checkbox/check-mark.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 70% auto;
@@ -55,9 +55,25 @@
   }
 
   &:disabled + .todo-item__check-box {
+    opacity: 0.3;
   }
 
-  &:checked:disabled + .todo-item__check-box {
+  &:disabled ~ .todo-item__text {
+    opacity: 0.3;
+  }
+
+  &:disabled:hover + .todo-item__check-box {
+    opacity: 0.3;
+    background-color: $secondary-color-200;
+  }
+
+  &:disabled:checked:hover + .todo-item__check-box {
+    background-color: $primary-color-500;
+  }
+
+  &:disabled ~ .todo-item__text {
+    opacity: 0.3;
+    color: $white;
   }
 }
 
