@@ -11,16 +11,13 @@
     width: 420px;
     margin: 0 auto;
   }
-
-  @media (min-width: $desktop-width) {
-  }
 }
 
 .todo-board__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .todo-board__title {
@@ -30,8 +27,8 @@
 }
 
 .todo-board__add-button {
-  padding: 0.4em 1em;
-  border-radius: 0.7em;
+  padding: 0.35em 0.75em;
+  border-radius: 7px;
   text-transform: uppercase;
   background-color: $primary-color-500;
   transition: all 0.2s ease;

@@ -1,13 +1,14 @@
 @import  '../../styles/utils/variables';
 
 .todo-item {
-
+  padding: 8px 0;
 }
 
 .todo-item__check {
   padding-left: 2.2em;
   cursor: pointer;
   display: block;
+  position: relative;
 }
 
 .todo-item__check-input {
@@ -38,6 +39,10 @@
 
   &:checked + .todo-item__check-box {
     background-color: $primary-color-500;
+    background-image: url("../../img/checkbox/check-mark.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 70% auto;
   }
 
   &:checked ~ .todo-item__text {
@@ -58,9 +63,11 @@
 
 .todo-item__check-box {
   position: absolute;
-  width: 1.5em;
-  height: 1.5em;
-  margin-left: -2.2em;
+  width: 1.3em;
+  height: 1.3em;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   background-color: $secondary-color-200;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -68,10 +75,14 @@
 
 .todo-item__text {
   transition: all 0.2s ease;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: 19.5px;
 }
 
 .todo-item__description {
   color: $secondary-color-200;
   font-size: 12px;
   line-height: 15px;
+  margin: 0;
 }

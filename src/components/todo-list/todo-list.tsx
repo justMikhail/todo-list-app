@@ -8,7 +8,7 @@ type TodoListType = {
 
 function TodoList(props: TodoListType): JSX.Element {
   const {allTodos} = props;
-  const todosForShowing = allTodos.slice(0, 5); //todo replace with pagination or scroll
+  const todosPerBoard = allTodos.slice(0, 6); //todo replace with pagination or scroll
 
   if (!allTodos.length) {
     return <p>Please, Add your firs task</p>;
@@ -16,7 +16,7 @@ function TodoList(props: TodoListType): JSX.Element {
 
   return (
     <ul className="todo-list">
-      {todosForShowing.map((todo) => (
+      {todosPerBoard.map((todo) => (
         <TodoItem
           key={todo.id}
           todoData={todo}
