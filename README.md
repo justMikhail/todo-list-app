@@ -1,5 +1,5 @@
 ## **Описание проекта**
-# [Pet project "Todo-lis-app](https://github.com/justMikhail/todo-list-app)
+# [Pet project "Todo-lis-app"](https://github.com/justMikhail/todo-list-app)
 
 ![Flutter](https://img.shields.io/badge/status-release-<COLOR>)
 
@@ -10,7 +10,8 @@
 
 ## **Стек**
 + React (проект был развернут с [Create React App](https://github.com/facebook/create-react-app)
-+ Redux
++ Typescript
++ Redux (redux toolkit)
 + Axios (взаимодействие с сервером, генерация api)
 
 ## **Установка**
