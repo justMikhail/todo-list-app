@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import {Transition} from 'react-transition-group';
 import {getAllTodosData, getLoadedDataStatus} from '../../store/app-data/selectors';
 import Loader from '../loader/loader';
 import TodoList from '../todo-list/todo-list';
@@ -19,9 +20,12 @@ function TodoBoard(): JSX.Element {
           ? <TodoList allTodos={allTodosData} />
           : <Loader />}
       </div>
-
-      <div className="todo-bard__decor-bgr todo-bard__decor-bgr--first"></div>
-      <div className="todo-bard__decor-bgr todo-bard__decor-bgr--second"></div>
+      <Transition in={isDataLoaded} timeout={500}>
+        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--first ${state}`}></div>}
+      </Transition>
+      <Transition in={isDataLoaded} timeout={500}>
+        {(state) => <div className={`todo-bard__decor-bgr todo-bard__decor-bgr--second ${state}`}></div>}
+      </Transition>
     </article>
   );
 }

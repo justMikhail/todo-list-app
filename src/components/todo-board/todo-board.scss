@@ -68,27 +68,68 @@
   }
 }
 
+@keyframes showDecorBgrFirst {
+  0%{
+    transform: rotate(0deg);
+    top: 0;
+  }
+  50%{
+    transform: rotate(-1.16deg);
+    top: -9px;
+  }
+  100%{
+    transform: rotate(-2.32deg);
+    top: -18px;
+  }
+}
+
+@keyframes showDecorBgrSecond {
+  0%{
+    transform: rotate(0deg);
+    top: 0;
+  }
+  50%{
+    transform: rotate(-2.24deg);
+    top: -15px;
+  }
+  100%{
+    transform: rotate(-4.48deg);;
+    top: -30px;
+  }
+}
+
 .todo-bard__decor-bgr {
   position: absolute;
   border-radius: var(--todo-board-border-radius);
 
   &--first {
     z-index: 2;
-    top: -18px;
-    left: 1px;
     width: 94%;
     height: 70px;
-    transform: rotate(-2.32deg);
+    top: 0;
+    left: 1px;
     background-color: $secondary-color-400;
+  }
+
+  &--first.entered {
+    animation: showDecorBgrFirst 0.3s ease-in;
+    transform: rotate(-2.32deg);
+    top: -18px;
   }
 
   &--second {
     z-index: 1;
-    top: -30px;
+    top: 0;
     left: 2px;
     width: 81%;
     height: 70px;
-    transform: rotate(-4.48deg);
     background-color: $secondary-color-200;
   }
+
+  &--second.entered {
+    animation: showDecorBgrSecond 0.3s ease-in;
+    transform: rotate(-4.48deg);
+    top: -30px;
+  }
 }
+
