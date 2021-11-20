@@ -1,5 +1,4 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-
 import {AppRoute} from '../../const/routs';
 import MainPage from '../app-pages/main-page/main-page';
 import NotFoundPage from '../app-pages/not-found-page/not-found-page';

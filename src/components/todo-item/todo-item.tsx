@@ -11,7 +11,9 @@ function TodoItem(props: TodoItemType): JSX.Element {
   const {todoData} = props;
   const isCompleted = todoData.completed;
   const dispatch  = useDispatch();
-  const onTodoItemClickHandler: React.ChangeEventHandler<HTMLInputElement>  = (event) => dispatch(changeTodoCompleteStatus(parseInt(event.target.dataset.id ?? '', 10)));
+  const onTodoItemClickHandler: React.ChangeEventHandler<HTMLInputElement>  = (event) => {
+    dispatch(changeTodoCompleteStatus(parseInt(event.target.dataset.id ?? '', 10)));
+  };
 
   return (
     <li className="todo-item">

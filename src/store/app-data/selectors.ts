@@ -4,3 +4,5 @@ import {TodoType} from '../../types/todo-type';
 
 export const selectAllTodosData = (state: State): TodoType[] => state[NameSpace.data].allTodosData;
 export const selectLoadedDataStatus = (state: State): boolean => state[NameSpace.data].isDataLoaded;
+export const selectApiError = (state: State): string | null => state[NameSpace.data].apiErrorMessage;
+

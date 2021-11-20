@@ -17,3 +17,14 @@ export const changeTodoCompleteStatus = createAction(
     payload: changedTodoId,
   }),
 );
+
+export const showApiError = createAction(
+  ActionType.ShowApiError,
+  (errorMessage) => ({
+    payload: errorMessage,
+  }),
+);
+
+export const hideApiError = createAction(
+  ActionType.HideApiError,
+);

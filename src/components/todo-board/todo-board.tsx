@@ -1,18 +1,19 @@
-import {useSelector} from 'react-redux';
+import {useEffect, useRef} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {Transition} from 'react-transition-group';
-import {selectAllTodosData, selectLoadedDataStatus} from '../../store/app-data/selectors';
+import {selectAllTodosData, selectApiError, selectLoadedDataStatus} from '../../store/app-data/selectors';
+import {fetchTodosDataAction} from '../../store/api-actions';
+import {ErrorMessage} from '../../const/const';
+import './todo-board.scss';
 import Loader from '../loader/loader';
 import TodoList from '../todo-list/todo-list';
-import {fetchTodosDataAction} from '../../store/api-actions';
-import './todo-board.scss';
-import {useDispatch} from 'react-redux';
-import {useEffect, useRef} from 'react';
 
 function TodoBoard(): JSX.Element {
   const allTodosData = useSelector(selectAllTodosData);
   const isDataLoaded = useSelector(selectLoadedDataStatus);
   const decorFirstRef = useRef(null);
   const decorSecondRef = useRef(null);
+  const apiErrorMessage = useSelector(selectApiError);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,7 +27,8 @@ function TodoBoard(): JSX.Element {
           <h1 className="todo-board__title">Todo list</h1>
           <button className="todo-board__add-button">Add</button>
         </div>
-        {isDataLoaded
+        {apiErrorMessage && <p>{ErrorMessage.ApiError}</p>}
+        {(isDataLoaded && !apiErrorMessage)
           ? <TodoList allTodos={allTodosData} />
           : <Loader />}
       </div>

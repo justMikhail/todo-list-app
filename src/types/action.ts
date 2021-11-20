@@ -4,8 +4,10 @@ import {AxiosInstance} from 'axios';
 import {State} from './state';
 
 export enum ActionType {
-  LoadAllTodosData = 'data/loadAllTodosData',
-  ChangeTodoCompleteStatus = 'data/changeTodoCompleteStatus'
+  LoadAllTodosData = 'api/loadAllTodosData',
+  ChangeTodoCompleteStatus = 'data/changeTodoCompleteStatus',
+  ShowApiError = 'api/showApiError',
+  HideApiError = 'api/hideApiError'
 }
 
 export type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;
