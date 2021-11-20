@@ -31,12 +31,6 @@
     color: $primary-color-500;
   }
 
-  &:hover ~ .todo-item__text {
-  }
-
-  &:active + .todo-item__check-box {
-  }
-
   &:checked + .todo-item__check-box {
     background-color: $primary-color-500;
     background-image: url("../../../src/img/checkbox/check-mark.svg");
@@ -48,6 +42,10 @@
   &:checked ~ .todo-item__text {
     text-decoration: line-through;
     color: $secondary-color-200;
+  }
+
+  &:checked ~ .todo-item__description {
+    text-decoration: line-through;
   }
 
   &:checked:hover ~ .todo-item__text {
